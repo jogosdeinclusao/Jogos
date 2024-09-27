@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos de Inclusão</title>
+    <link rel="icon" href="https://jogosdeinclusao.github.io/iconejogosdeinclusao.png" type="image/png">
+    <link rel="stylesheet" href="https://jogosdeinclusao.github.io/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 20px;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        nav {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px 20px;
+            flex: 1;
+        }
+
+        .container img {
+            max-width: 30%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .buttons button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: transform 0.3s;
+        }
+
+        .buttons button:hover {
+            transform: scale(1.05);
+        }
+
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .category-buttons a button {
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: #218838;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .category-section {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .category-section h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .game-card {
+            background-color: #e0e0e0;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .game-card img {
+            width: 100px;
+            height: auto;
+        }
+
+        .game-card h3 {
+            margin: 15px 0 10px;
+            font-size: 20px;
+        }
+
+        .ver-tudo-btn {
+            background-color: #4CAF50; /* Cor verde */
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px; /* Botão arredondado */
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 15px; /* Espaçamento entre o título e o botão */
+        }
+
+        .ver-tudo-btn:hover {
+            background-color: #45a049; /* Cor verde mais escura no hover */
+            transform: scale(1.05); /* Efeito de ampliação no hover */
+        }
+
+        .game-card button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .game-card button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+
+        /* Mobile menu styles */
+        .menu-toggle {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            nav.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #4CAF50;
+                padding: 10px;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="https://jogosdeinclusao.github.io/logojogosdeinclusao.png" alt="Logo Jogos de Inclusão" class="logo">
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <nav id="menu">
+            <a href="https://jogosdeinclusao.github.io">Início</a>
+            <a href="https://jogosdeinclusao.github.io/Jogos">Jogar</a>
+            <a href="https://jogosdeinclusao.github.io/Sobre">Sobre</a>
+        </nav>
+    </header>
+    
+    <body> <!-- Inicio do corpo da página -->
+
+        ... <!-- Conteúdo da página -->
+      
+        <div vw class="enabled">
+          <div vw-access-button class="active"></div>
+          <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+          </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+          new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+      </body> <!-- Fim do corpo da página -->
+
+    <div class="container">
+        <h1>Jogos Recomendados</h1>
+        <div class="category-buttons">
+            <a href="RapidMath.html"><button>Matemática</button></a>
+            <a href="TrafficControl.html"><button>Física</button></a>
+            <a href="WaterSort.html"><button>Ciência</button></a>
+            <a href="ConnectTheDots.html"><button>Quebra-Cabeça</button></a>
+        </div>
+
+        <div class="category-section">
+            <h2>Língua Portuguesa e Letras
+                <a href="LinguaPortuguesa.html">
+                    <button class="ver-tudo-btn">Ver todos os Jogos</button>
+                </a>
+            </h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <img src="LinguaPortuguesa/WordSearch.webp" alt="Word Search">
+                    <h3>Word Search</h3>
+                    <a href="LinguaPortuguesa/WordSearch.html"><button>Jogar</button></a>
+                </div>
+                <div class="game-card">
+                    <img src="LinguaPortuguesa/WordBird.webp" alt="Word Bird">
+                    <h3>Word Bird</h3>
+                    <a href="LinguaPortuguesa/WordBird.html"><button>Jogar</button></a>
+                </div>
+            </div>
+        </div>               
+
+        <div class="category-section">
+            <h2>Matemática e Números
+                <a href="Matematica.html">
+                    <button class="ver-tudo-btn">Ver todos os Jogos</button>
+                </a>
+            </h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <img src="Matematica/QuickArithmetic.webp" alt="Quick Arithmetic">
+                    <h3>Quick Arithmetic</h3>
+                    <a href="Matematica/QuickArithmetic.html"><button>Jogar</button></a>
+                </div>
+                <div class="game-card">
+                    <img src="Matematica/RapidMath.webp" alt="Rapid Math">
+                    <h3>Rapid Math</h3>
+                    <a href="Matematica/RapidMath.html"><button>Jogar</button></a>
+                </div>
+                <div class="game-card">
+                    <img src="Matematica/NeonMath.webp" alt="Neon Math">
+                    <h3>Neon Math</h3>
+                    <a href="Matematica/NeonMath.html"><button>Jogar</button></a>
+                </div>
+                <div class="game-card">
+                    <img src="Matematica/10to20.webp" alt="10 to 20">
+                    <h3>10 to 20</h3>
+                    <a href="Matematica/10to20.html"><button>Jogar</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2>Jogos de Quebra-Cabeça</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <img src="QuebraCabeca/ConnectTheDots.webp" alt="Connect The Dots">
+                    <h3>Connect The Dots</h3>
+                    <a href="QuebraCabeca/ConnectTheDots.html"><button>Jogar</button></a>
+                </div>
+                <div class="game-card">
+                    <img src="QuebraCabeca/TrafficControl.webp" alt="Traffic Control">
+                    <h3>Traffic Control</h3>
+                    <a href="QuebraCabeca/TrafficControl.html"><button>Jogar</button></a>
+                </div>
+                <div class="game-card">
+                    <img src="QuebraCabeca/SwipeACar.webp" alt="Swipe a Car">
+                    <h3>Swipe a Car</h3>
+                    <a href="QuebraCabeca/SwipeACar.html"><button>Jogar</button></a>
+                </div>
+                <div class="game-card">
+                    <img src="QuebraCabeca/SlideAndRoll.webp" alt="Slide and Roll">
+                    <h3>Slide and Roll</h3>
+                    <a href="QuebraCabeca/SlideAndRoll.html"><button>Jogar</button></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2>Jogos de Estratégia</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <img src="Estrategia/TicTacToe.webp" alt="Jogo da Velha">
+                    <h3>Jogo da Velha</h3>
+                    <a href="Estrategia/TicTacToe.html"><button>Jogar</button></a>
+                </div>
+                <div class="game-card">
+                    <img src="Estrategia/BlockDomino.webp" alt="Dominó">
+                    <h3>Dominó</h3>
+                    <a href="Estrategia/BlockDomino.html"><button>Jogar</button></a>
+                </div>
+                <div class="game-card">
+                    <img src="Estrategia/ConstructionWeights.webp" alt="Construction Weights">
+                    <h3>Construction Weights</h3>
+                    <a href="Estrategia/ConstructionWeights.html"><button>Jogar</button></a>
+                </div>
+                <div class="game-card">
+                    <img src="Estrategia/Illuminate.webp" alt="Illuminate">
+                    <h3>Illuminate</h3>
+                    <a href="Estrategia/Illuminate.html"><button>Jogar</button></a>
+                </div>
+            </div>
+        </div>             
+
+        <div class="category-section">
+            <h2>Ciências e Químicas</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <img src="Quimica/WaterPouringPuzzle.webp" alt="Water Pouring Puzzle">
+                    <h3>Water Pouring Puzzle</h3>
+                    <a href="Quimica/WaterPouringPuzzle.html"><button>Jogar</button></a>
+                </div>
+                <div class="game-card">
+                    <img src="Quimica/WaterSort.webp" alt="Water Sort">
+                    <h3>Water Sort</h3>
+                    <a href="Quimica/WaterSort.html"><button>Jogar</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jogos de Inclusão. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
