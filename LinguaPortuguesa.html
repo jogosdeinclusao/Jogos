@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos de Língua Portuguesa</title>
+    <link rel="icon" href="iconejogosdeinclusao.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="logojogosdeinclusao.png" alt="Logo Jogos de Inclusão">
+            <span class="site-name">Jogos de Inclusão</span>
+        </div>
+        <div class="menu">
+            <a href="https://jogosdeinclusao.github.io/">Início</a>
+            <a href="https://jogosdeinclusao.github.io/Jogos/">Jogos</a>
+            <a href="https://jogosdeinclusao.github.io/Sobre/">Sobre</a>
+        </div>
+        <span class="hamburger" onclick="toggleMenu()">☰</span>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="https://jogosdeinclusao.github.io/">Início</a>
+            <a href="https://jogosdeinclusao.github.io/Jogos/">Jogos</a>
+            <a href="https://jogosdeinclusao.github.io/Sobre/">Sobre</a>
+        </div>
+    </div>
+
+        <!-- VLibras -->
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+    </header>
+
+    <div class="container">
+        <h1>Jogos de Língua Portuguesa</h1>
+
+        <div class="category-section">
+            <h2>Modo Facíl ao Médio</h2>
+        <div class="games-grid">
+            <div class="games-grid">
+            <div class="game-card">
+                <img src="LinguaPortuguesa/WordSearch.webp" alt="Caça-Palavras Clássico">
+                <h3>Caça-Palavras Clássico</h3>
+                <button onclick="openGame('LinguaPortuguesa/WordSearch.html', 'https://play.famobi.com/wrapper/word-search-classic/A1000-10')">Jogar</button>
+            </div>
+            <div class="game-card">
+                <img src="LinguaPortuguesa/WordBird.webp" alt="Palavra-Pássaro">
+                <h3>Palavra-Pássaro</h3>
+                <button onclick="openGame('LinguaPortuguesa/WordBird.html', 'https://play.famobi.com/wrapper/word-bird/A1000-10')">Jogar</button>
+            </div>
+            <div class="game-card">
+                <img src="LinguaPortuguesa/WordsOfWonders.webp" alt="Adivinhe as Palavras">
+                <h3>Adivinhe as Palavras</h3>
+                <button onclick="openGame('LinguaPortuguesa/WordsOfWonders.html', 'https://play.famobi.com/wrapper/words-of-wonders/A1000-10')">Jogar</button>
+            </div>
+            <div class="game-card">
+                <img src="LinguaPortuguesa/JogoDaForca.webp" alt="Jogo da Forca">
+                <h3>Jogo da Forca</h3>
+                <button onclick="openGame('LinguaPortuguesa/JogoDaForca.html', 'LinguaPortuguesa/JogoDaForca.html')">Jogar</button>
+            </div>
+        </div>
+    </div>
+
+        <div class="category-section">
+            <h2>Modo Médio ao Difícil</h2>
+        <div class="games-grid">
+            <div class="games-grid">
+            <div class="game-card">
+                <img src="LinguaPortuguesa/Brigadeirolandia.webp" alt="Brigadeirolândia">
+                <h3>Brigadeirolândia</h3>
+                <button onclick="openGame('LinguaPortuguesa/Brigadeirolandia.html', 'https://www.ludoeducativo.com.br/pt/play/brigadeirolandia')">Jogar</button>
+            </div>
+            <div class="game-card">
+                <img src="LinguaPortuguesa/MandaLetra.webp" alt="Manda Letra">
+                <h3>Manda Letra</h3>
+                <button onclick="openGame('LinguaPortuguesa/MandaLetra.html', 'https://www.ludoeducativo.com.br/pt/play/manda-letra-remake')">Jogar</button>
+            </div>
+            <div class="game-card">
+                <img src="LinguaPortuguesa/NoRitmoDasPalavras.webp" alt="No Ritmo das Palavras">
+                <h3>No Ritmo das Palavras</h3>
+                <button onclick="openGame('LinguaPortuguesa/NoRitmoDasPalavras.html', 'https://www.ludoeducativo.com.br/pt/play/no-ritmo-das-palavras-remake')">Jogar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jogos de Inclusão. Todos os direitos reservados.</p>
+        <button id="toggle-theme">🌞</button>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function openGame(desktopUrl, mobileUrl) {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            window.location.href = isMobile ? mobileUrl : desktopUrl;
+        }
+    </script>
+</body>
+</html>

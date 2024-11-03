@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos de Quebra-Cabeça</title>
+    <link rel="icon" href="iconejogosdeinclusao.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="logojogosdeinclusao.png" alt="Logo Jogos de Inclusão">
+            <span class="site-name">Jogos de Inclusão</span>
+        </div>
+        <div class="menu">
+            <a href="https://jogosdeinclusao.github.io/">Início</a>
+            <a href="https://jogosdeinclusao.github.io/Jogos/">Jogos</a>
+            <a href="https://jogosdeinclusao.github.io/Sobre/">Sobre</a>
+        </div>
+        <span class="hamburger" onclick="toggleMenu()">☰</span>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="https://jogosdeinclusao.github.io/">Início</a>
+            <a href="https://jogosdeinclusao.github.io/Jogos/">Jogos</a>
+            <a href="https://jogosdeinclusao.github.io/Sobre/">Sobre</a>
+        </div>
+    </div>
+
+        <!-- VLibras -->
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+    </header>
+
+    <div class="container">
+        <h1>Jogos de Quebra-Cabeça</h1>
+
+        <div class="category-section">
+            <h2>Modo Facíl ao Médio</h2>
+        <div class="games-grid">
+            <div class="games-grid">
+            <div class="game-card">
+                <img src="QuebraCabeça/JigsawPuzzleClassic.webp" alt="Quebra-Cabeça Clássico">
+                <h3>Quebra-Cabeça Clássico</h3>
+                <button onclick="openGame('QuebraCabeça/JigsawPuzzleClassic.html', 'https://play.famobi.com/wrapper/jigsaw-puzzle-classic/A1000-10')">Jogar</button>
+            </div>
+            <div class="game-card">
+                <img src="QuebraCabeça/JigsawPuzzleDeluxe.webp" alt="Quebra-Cabeça Deluxe">
+                <h3>Quebra-Cabeça Deluxe</h3>
+                <button onclick="openGame('QuebraCabeça/JigsawPuzzleDeluxe.html', 'https://play.famobi.com/wrapper/jigsaw-puzzle-deluxe/A1000-10')">Jogar</button>
+            </div>
+            <div class="game-card">
+                <img src="QuebraCabeça/Maze.webp" alt="Labirinto">
+                <h3>Labirinto</h3>
+                <button onclick="openGame('QuebraCabeça/Maze.html', 'https://play.famobi.com/wrapper/maze/A1000-10')">Jogar</button>
+            </div>
+            <div class="game-card">
+                <img src="QuebraCabeça/TapMyWater.webp" alt="Ajude o Encanador">
+                <h3>Ajude o Encanador</h3>
+                <button onclick="openGame('QuebraCabeça/TapMyWater.html', 'https://play.famobi.com/wrapper/tap-my-water/A1000-10')">Jogar</button>
+            </div>
+        </div>
+    </div>
+
+        <div class="category-section">
+            <h2>Modo Médio ao Difícil</h2>
+        <div class="games-grid">
+            <div class="games-grid">
+            <div class="game-card">
+                <img src="QuebraCabeça/KittenMatch.webp" alt="Encontre o Gato">
+                <h3>Encontre o Gato</h3>
+                <button onclick="openGame('QuebraCabeça/KittenMatch.html', 'https://play.famobi.com/wrapper/kitten-match/A1000-10')">Jogar</button>
+            </div>
+            <div class="game-card">
+                <img src="QuebraCabeça/FindInMind.webp" alt="Treine seu Cérebro">
+                <h3>Treine seu Cérebro</h3>
+                <button onclick="openGame('QuebraCabeça/FindInMind.html', 'https://play.famobi.com/wrapper/find-in-mind/A1000-10')">Jogar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jogos de Inclusão. Todos os direitos reservados.</p>
+        <button id="toggle-theme">🌞</button>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function openGame(desktopUrl, mobileUrl) {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            window.location.href = isMobile ? mobileUrl : desktopUrl;
+        }
+    </script>
+</body>
+</html>

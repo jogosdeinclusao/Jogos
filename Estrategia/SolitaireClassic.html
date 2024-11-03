@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos de Inclusão</title>
+    <link rel="icon" href="https://jogosdeinclusao.github.io/iconejogosdeinclusao.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>  
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .btn-voltar {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 15px;
+            margin-top: 1px;
+        }
+        
+        .btn-voltar:hover {
+            background-color: #45a049;
+        }
+
+
+        .container {
+            text-align: center;
+            padding: 25px 20px;
+            flex: 1;
+        }
+
+        .game-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .game-description {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .game-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="logojogosdeinclusao.png" alt="Logo Jogos de Inclusão">
+            <span class="site-name">Jogos de Inclusão</span>
+        </div>
+        <div class="menu">
+            <a href="https://jogosdeinclusao.github.io/">Início</a>
+            <a href="https://jogosdeinclusao.github.io/Jogos/">Jogos</a>
+            <a href="https://jogosdeinclusao.github.io/Sobre/">Sobre</a>
+        </div>
+        <span class="hamburger" onclick="toggleMenu()">☰</span>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="https://jogosdeinclusao.github.io/">Início</a>
+            <a href="https://jogosdeinclusao.github.io/Jogos/">Jogos</a>
+            <a href="https://jogosdeinclusao.github.io/Sobre/">Sobre</a>
+        </div>
+    </div>
+
+        <!-- VLibras -->
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+    </header>
+
+    <div class="container">
+        <button class="btn-voltar" onclick="location.href='https://jogosdeinclusao.github.io/Jogos/'">Voltar</button>
+        <div class="game-title">Solitaire Classic</div>
+        <div class="game-description">Treine seu cérebro e jogue Solitaire Classic! As regras são fáceis de aprender: O objetivo do jogo é mover todas as cartas para as quatro pilhas de fundação, classificadas por naipe e classificação em ordem crescente de Ás a Rei. No campo, as cartas só podem ser classificadas em ordem decrescente de cores alternadas. Qual pontuação você pode alcançar?</div>
+        <div class="game-container">
+            <div id="game" class="display-wide">
+                <iframe id="fg-frame-solitaire-classic" width="640" height="640" data-aspect-ratio="1" src="https://play.famobi.com/wrapper/solitaire-classic/A1000-10" frameborder="0"></iframe><script>(function(d, url, fgJS, firstJS){fgJS = d.createElement('script');firstJS=d.getElementsByTagName('script')[0];fgJS.src=url;fgJS.onload=function() {var fg_frame=document.getElementById('fg-frame-solitaire-classic');var fg_url='https://play.famobi.com/solitaire-classic/A-LPXRF';var mobileRedirect=false;var mobileTablet=false;famobi_embedFrame(fg_frame, fg_url, mobileRedirect, mobileTablet);};firstJS.parentNode.insertBefore(fgJS, firstJS);})(document, 'https://games.cdn.famobi.com/html5games/plugins/embed.js?v=2.1')</script>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jogos de Inclusão. Todos os direitos reservados.</p>
+        <button id="toggle-theme">🌞</button>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function openGame(desktopUrl, mobileUrl) {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            window.location.href = isMobile ? mobileUrl : desktopUrl;
+        }
+    </script>
+</body>
+</html>

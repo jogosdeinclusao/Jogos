@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos de Estratégia</title>
+    <link rel="icon" href="iconejogosdeinclusao.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="logojogosdeinclusao.png" alt="Logo Jogos de Inclusão">
+            <span class="site-name">Jogos de Inclusão</span>
+        </div>
+        <div class="menu">
+            <a href="https://jogosdeinclusao.github.io/">Início</a>
+            <a href="https://jogosdeinclusao.github.io/Jogos/">Jogos</a>
+            <a href="https://jogosdeinclusao.github.io/Sobre/">Sobre</a>
+        </div>
+        <span class="hamburger" onclick="toggleMenu()">☰</span>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="https://jogosdeinclusao.github.io/">Início</a>
+            <a href="https://jogosdeinclusao.github.io/Jogos/">Jogos</a>
+            <a href="https://jogosdeinclusao.github.io/Sobre/">Sobre</a>
+        </div>
+    </div>
+
+        <!-- VLibras -->
+        <div vw class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+                <div class="vw-plugin-top-wrapper"></div>
+            </div>
+        </div>
+        <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+        <script>
+            new window.VLibras.Widget('https://vlibras.gov.br/app');
+        </script>
+    </header>
+
+    <div class="container">
+        <h1>Jogos de Estratégia</h1>
+
+        <div class="category-section">
+            <h2>Jogos de Tabuleiros</h2>
+        <div class="games-grid">
+            <div class="games-grid">
+                <div class="game-card">
+                    <img src="Estrategia/3dChess.webp" alt="Xadrez em 3D">
+                    <h3>Xadrez em 3D</h3>
+                    <button onclick="openGame('Estrategia/3dChess.html', 'https://play.famobi.com/wrapper/3d-chess/A1000-10')">Jogar</button>
+                </div>
+                <div class="game-card">
+                    <img src="Estrategia/CheckersClassic.webp" alt="Jogo de Damas Clássico">
+                    <h3>Jogo de Damas Clássico</h3>
+                    <button onclick="openGame('Estrategia/CheckersClassic.html', 'https://play.famobi.com/wrapper/checkers-classic/A1000-10')">Jogar</button>
+                </div>
+                <div class="game-card">
+                    <img src="Estrategia/ChessClassic.webp" alt="Xadrez Clássico">
+                    <h3>Xadrez Clássico</h3>
+                    <button onclick="openGame('Estrategia/ChessClassic.html', 'https://play.famobi.com/wrapper/chess-classic/A1000-10')">Jogar</button>
+                </div>
+                <div class="game-card">
+                    <img src="Estrategia/DominoesClassic.webp" alt="Dominó Clássico">
+                    <h3>Dominó Clássico</h3>
+                    <button onclick="openGame('Estrategia/DominoesClassic.html', 'https://play.famobi.com/wrapper/dominoes-classic/A1000-10')">Jogar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="category-section">
+        <h2>Jogos de Cartas</h2>
+        <div class="games-grid">
+            <div class="games-grid">
+            <div class="game-card">
+                <img src="Estrategia/DuoCards.webp" alt="Duo Cards">
+                <h3>Duo Cards</h3>
+                <button onclick="openGame('Estrategia/DuoCards.html', 'https://play.famobi.com/wrapper/duo-cards/A1000-10')">Jogar</button>
+            </div>
+            <div class="game-card">
+                <img src="Estrategia/SolitaireClassic.webp" alt="Paciência">
+                <h3>Paciência</h3>
+                <button onclick="openGame('Estrategia/SolitaireClassic.html', 'https://play.famobi.com/wrapper/solitaire-classic/A1000-10')">Jogar</button>
+            </div>
+            <div class="game-card">
+                <img src="Estrategia/3dSolitaire.webp" alt="Paciência em 3D">
+                <h3>Paciência em 3D</h3>
+                <button onclick="openGame('Estrategia/3dSolitaire.html', 'https://play.famobi.com/wrapper/3d-solitaire/A1000-10')">Jogar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <p>&copy; 2024 Jogos de Inclusão. Todos os direitos reservados.</p>
+        <button id="toggle-theme">🌞</button>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function openGame(desktopUrl, mobileUrl) {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            window.location.href = isMobile ? mobileUrl : desktopUrl;
+        }
+    </script>
+</body>
+</html>
