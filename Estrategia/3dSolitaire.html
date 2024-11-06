@@ -25,9 +25,9 @@
             border: none;
             border-radius: 20px;
             cursor: pointer;
-            font-size: 16px;
             margin-bottom: 15px;
             margin-top: 1px;
+            font-size: 16px;
         }
         
         .btn-voltar:hover {
@@ -42,13 +42,11 @@
         }
 
         .game-title {
-            font-size: 22px;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
         .game-description {
-            font-size: 18px;
             margin-bottom: 20px;
         }
 
@@ -96,6 +94,7 @@
         <button class="btn-voltar" onclick="location.href='https://jogosdeinclusao.github.io/Jogos/'">Voltar</button>
         <div class="game-title">3D Solitaire</div>
         <div class="game-description">Treine seu cérebro neste clássico jogo de cartas de paciência com gráficos 3D impressionantes! Situado em um misterioso templo antigo, sua tarefa é mover todas as cartas para as quatro pilhas de fundação, classificadas por naipe e classificação em ordem crescente de Ás a Rei. No campo, as cartas só podem ser classificadas em ordem decrescente alternando cores. Escolha entre dois designs de cartas, um modo de 1 e 3 cartas e a posição do seu baralho para sua conveniência. Você consegue atingir uma pontuação alta?</div>
+        <button id="fullscreen-btn" class="btn-voltar" onclick="toggleFullscreen()">Ativar Tela Cheia</button>
         <div class="game-container">
             <div id="game" class="display-wide">
                 <iframe id="fg-frame-3d-solitaire" width="800" height="600" data-aspect-ratio="1" src="https://play.famobi.com/wrapper/3d-solitaire/A1000-10" frameborder="0"></iframe><script>(function(d, url, fgJS, firstJS){fgJS = d.createElement('script');firstJS=d.getElementsByTagName('script')[0];fgJS.src=url;fgJS.onload=function() {var fg_frame=document.getElementById('fg-frame-3d-solitaire');var fg_url='https://play.famobi.com/3d-solitaire/A-LPXRF';var mobileRedirect=true;var mobileTablet=true;famobi_embedFrame(fg_frame, fg_url, mobileRedirect, mobileTablet);};firstJS.parentNode.insertBefore(fgJS, firstJS);})(document, 'https://games.cdn.famobi.com/html5games/plugins/embed.js?v=2.1')</script>
@@ -103,9 +102,29 @@
         </div>
     </div>
 
+        <!-- Janela de Configurações -->
+        <div id="config-modal" class="config-modal">
+            <div class="config-content">
+                <button id="close-config" class="close-btn">✕</button>
+                <h3>Configurações</h3>
+    
+                <!-- Mudar Tema -->
+                <div class="config-item">
+                    <label for="theme-toggle">Mudar Tema:</label>
+                    <button id="theme-toggle" class="config-button">Claro</button>
+                </div>
+    
+                <!-- Tipo de Escala -->
+                <div class="config-item">
+                    <label for="scale-toggle">Tipo de Escala:</label>
+                    <button id="scale-toggle" class="config-button">Normal</button>
+                </div>
+            </div>
+        </div>
+
     <footer>
         <p>&copy; 2024 Jogos de Inclusão. Todos os direitos reservados.</p>
-        <button id="toggle-theme">🌞</button>
+        <button id="open-config" class="config-icon">⚙️</button>
     </footer>
 
     <script>
@@ -114,10 +133,22 @@
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
 
-        function openGame(desktopUrl, mobileUrl) {
-            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            window.location.href = isMobile ? mobileUrl : desktopUrl;
-        }
+    // Alterna o modo de tela cheia
+    function toggleFullscreen() {
+    const iframe = document.getElementById("fg-frame-3d-solitaire");
+    const fullscreenBtn = document.getElementById("fullscreen-btn");
+
+    if (!document.fullscreenElement) {
+        iframe.requestFullscreen().catch(err => {
+            console.error(`Erro ao entrar em tela cheia: ${err.message}`);
+        });
+        fullscreenBtn.textContent = "Ativar Tela Cheia";
+    } else {
+        document.exitFullscreen();
+        fullscreenBtn.textContent = "Ativar Tela Cheia";
+    }
+}
     </script>
+
 </body>
 </html>
