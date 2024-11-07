@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogos de Inclusão</title>
     <link rel="icon" href="https://jogosdeinclusao.github.io/iconejogosdeinclusao.png" type="image/png">
-    <link rel="stylesheet" href="https://jogosdeinclusao.github.io/Jogos/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <style>  
         body {
@@ -25,9 +25,9 @@
             border: none;
             border-radius: 20px;
             cursor: pointer;
-            font-size: 16px;
             margin-bottom: 15px;
             margin-top: 1px;
+            font-size: 16px;
         }
         
         .btn-voltar:hover {
@@ -42,13 +42,11 @@
         }
 
         .game-title {
-            font-size: 22px;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
         .game-description {
-            font-size: 18px;
             margin-bottom: 20px;
         }
 
@@ -97,24 +95,58 @@
         <div class="game-title">Quick Arithmetic</div>
         <div class="game-description">Teste suas habilidades em aritmética. Determine se a soma dada está correta.</div>
         <div class="game-container">
-        <div><script src="https://cdn.htmlgames.com/embed.js?game=QuickArithmetic&amp;bgcolor=black"></script></div>
+        <div id="game" class="display-wide">
+            <div> <script src="https://cdn.htmlgames.com/embed.js?game=QuickArithmetic&amp;bgcolor=black"></script> </div>
+        </div>
     </div>
+
+        <!-- Janela de Configurações -->
+        <div id="config-modal" class="config-modal">
+            <div class="config-content">
+                <button id="close-config" class="close-btn">✕</button>
+                <h3>Configurações</h3>
+    
+                <!-- Mudar Tema -->
+                <div class="config-item">
+                    <label for="theme-toggle">Mudar Tema:</label>
+                    <button id="theme-toggle" class="config-button">Claro</button>
+                </div>
+    
+                <!-- Tipo de Escala -->
+                <div class="config-item">
+                    <label for="scale-toggle">Tipo de Escala:</label>
+                    <button id="scale-toggle" class="config-button">Normal</button>
+                </div>
+            </div>
+        </div>
 
     <footer>
         <p>&copy; 2024 Jogos de Inclusão. Todos os direitos reservados.</p>
-        <button id="toggle-theme">🌞</button>
+        <button id="open-config" class="config-icon">⚙️</button>
     </footer>
 
     <script>
-        function toggleMenu() {
+    // Alterna o modo de tela cheia
+    function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
         }
 
-        function openGame(desktopUrl, mobileUrl) {
-            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            window.location.href = isMobile ? mobileUrl : desktopUrl;
-        }
+    function toggleFullscreen() {
+    const iframe = document.getElementById("game");
+    const fullscreenBtn = document.getElementById("fullscreen-btn");
+
+    if (!document.fullscreenElement) {
+        iframe.requestFullscreen().catch(err => {
+            console.error(`Erro ao entrar em tela cheia: ${err.message}`);
+        });
+        fullscreenBtn.textContent = "Ativar Tela Cheia";
+    } else {
+        document.exitFullscreen();
+        fullscreenBtn.textContent = "Ativar Tela Cheia";
+    }
+}
     </script>
+
 </body>
 </html>
